@@ -1,24 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { BrowserRouter as Router } from "react-router-dom"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Router>
+  <App />
+  </Router>
+
+  // </React.StrictMode>
 );
 
-const renderTasks = async () => {
-  let uri = 'http://localhost:3000/tasks'
-  
-  const res = await fetch(uri); 
-}
+// const tasksDiv = () => document.getElementById('tasks');
+// const form = () => document.getElementById('form');
+// const taskNameInput = () => document.getElementById('tasksName'); 
+// const contentInput = () => document.getElementById('content'); 
 
-window.addEventListener('DOMContentLoaded', () => renderTasks());
+// const attachSubmitFormEvent = event  => {
+//   form().addEventListener('submit', submitForm)
+// }
+
+reportWebVitals();
+
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
